@@ -30,7 +30,7 @@ window.LOVE_CONFIG = {
     "Thank you for the small things nobody else notices. The way you still there when I'm not ready financially in my zero days love. How you text me the song that reminds you of me even when we're in the same room. The way your voice changes when you say my name and you're laugh. Those are the things I'm actually in love with — the big stuff is just bonus.",
     "I know I'm not always easy. I take too long to say the thing that's right in front of me. So I'll say it here, where I can't fumble it: you are the best thing that has ever happened to me, and I would choose you again in every version of this life.",
     "This month had its hard parts. we got in each other's way a little. And still, you stayed. Still us. That's not a small thing to me — that's the whole thing. Every month we survive makes the next one look less scary and a lot more fun.",
-    "So here's to this month, and to all the ones I get to spend annoying you, kissing you, hugging you, growing old beside you. I love you more my love happy monthsary monthsary, definitely less than the next one.",
+    "So here's to this month, and to all the ones I get to spend annoying you, kissing you, hugging you, growing old beside you. I love you more my love happy monthsary, definitely less than the next one.",
   ],
 
   /* ---------- sign-off ---------- */
