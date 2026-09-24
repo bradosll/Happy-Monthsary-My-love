@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Monthsary ♥</title>
+  <meta name="description" content="A little letter, made for you, for every month we get to keep." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@500;700&family=Great+Vibes&family=Karla:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤</text></svg>" />
+</head>
+<body>
+  <!-- ===================== BACKGROUND ===================== -->
+  <div class="bg">
+    <div class="aurora a1"></div>
+    <div class="aurora a2"></div>
+    <div class="aurora a3"></div>
+    <div class="grain"></div>
+    <canvas id="stars"></canvas>
+    <div id="sky-layer" aria-hidden="true"></div>
+  </div>
+
+  <!-- ===================== INTRO: SEALED ENVELOPE ===================== -->
+  <section id="intro" class="intro">
+    <p class="intro-kicker">a letter arrived for</p>
+    <h1 class="intro-name" id="intro-name">My love</h1>
+
+    <div id="envelope" class="envelope" role="button" tabindex="0"
+         aria-label="Open the letter">
+      <div class="env-shadow"></div>
+      <div class="env-body">
+        <div class="env-inside"></div>
+        <div class="env-letter">
+          <span>♥</span>
+          <small>Happy monthsary</small>
+        </div>
+        <div class="env-front">
+          <div class="env-pocket"></div>
+        </div>
+        <div class="env-flap"></div>
+        <div class="wax-seal"><span>♥</span></div>
+      </div>
+    </div>
+
+    <p class="intro-hint" id="intro-hint">tap the seal to open</p>
+  </section>
+
+  <!-- ===================== MAIN LETTER ===================== -->
+  <main id="stage" class="stage" hidden>
+    <!-- ---------- hero ---------- -->
+    <header class="hero reveal">
+      <div class="hero-badge">
+        <span class="badge-num" id="month-count">—</span>
+        <span class="badge-txt">months<br />in love</span>
+      </div>
+      <h2 class="hero-title">
+        <span id="title-a">Happy Monthsary,</span>
+        <em id="title-b">my favourite person</em>
+      </h2>
+      <p class="hero-sub">
+        <span id="hero-date">—</span>
+        <span class="dot">•</span>
+        <span id="hero-days">—</span>
+      </p>
+      <div class="scroll-cue"><span></span>scroll, my love</div>
+    </header>
+
+    <!-- ---------- polaroid ---------- -->
+    <section class="photo-block reveal">
+      <figure class="polaroid" id="polaroid">
+        <div class="tape tape-l"></div>
+        <div class="tape tape-r"></div>
+        <div class="frame">
+          <img id="photo" alt="Us" />
+          <div class="photo-fallback" id="photo-fallback">
+            <b>♥</b>
+            <p>some memories are still<br />being taken</p>
+          </div>
+        </div>
+        <figcaption id="photo-caption"></figcaption>
+      </figure>
+    </section>
+
+    <!-- ---------- the letter ---------- -->
+    <section class="letter-block">
+      <div class="letter-paper reveal">
+        <div class="paper-head">
+          <span class="ph-left" id="letter-date-line"></span>   
+          <span class="ph-heart">♥</span>
+          <span class="ph-right">no.&nbsp;<b id="letter-no">1</b></span>
+        </div>
+
+        <h3 class="salutation">Dear <span id="dear-name">My love</span>,</h3>
+
+        <div class="letter-body" id="letter-body"></div>
+
+        <div class="letter-sign">
+          <p class="closing" id="closing-line">Forever yours,</p>
+          <p class="signature" id="signature">Palanga</p>
+        </div>
+
+        <div class="paper-foot"><span></span>♥<span></span></div>
+      </div>
+    </section>
+
+    <!-- ---------- stats / counters ---------- -->
+    <section class="stats reveal">
+      <article class="stat">
+        <span class="stat-num" id="stat-days">0</span>
+        <span class="stat-lbl">days of us</span>
+      </article>
+      <article class="stat">
+        <span class="stat-num" id="stat-months">0</span>
+        <span class="stat-lbl">months celebrated</span>
+      </article>
+      <article class="stat">
+        <span class="stat-num" id="stat-hours">0</span>
+        <span class="stat-lbl">hours I'd spend again</span>
+      </article>
+    </section>
+
+    <!-- ---------- countdown ---------- -->
+    <section class="countdown reveal">
+      <h4 class="sec-title">until the next one</h4>
+      <div class="cd-grid">
+        <div class="cd"><b id="cd-d">00</b><span>days</span></div>
+        <div class="cd"><b id="cd-h">00</b><span>hours</span></div>
+        <div class="cd"><b id="cd-m">00</b><span>minutes</span></div>
+        <div class="cd"><b id="cd-s">00</b><span>seconds</span></div>
+      </div>
+      <p class="cd-note" id="cd-note"></p>
+    </section>
+
+    <!-- ---------- flip cards ---------- -->
+    <section class="reasons reveal">
+      <h4 class="sec-title" id="reasons-title">Reasons</h4>
+      <div class="cards" id="reasons-grid"></div>
+    </section>
+
+    <!-- ---------- secret notes ---------- -->
+    <section class="secrets reveal">
+      <h4 class="sec-title">Tap the hearts — they're hiding something</h4>
+      <div class="secret-field" id="secret-field"></div>
+    </section>
+
+    <!-- ---------- finale ---------- -->
+    <footer class="finale reveal">
+      <p class="finale-small">one more thing,</p>
+      <p class="finale-big">I'd choose you.<br />Every month. Every time.</p>
+      <button class="btn-reopen" id="btn-again">♥&nbsp; send me more hearts</button>
+      <p class="finale-sign" id="finale-sign">— Mine</p>
+    </footer>
+  </main>
+
+  <!-- ===================== MUSIC PLAYER ===================== -->
+  <div class="player" id="player" hidden>
+    <div class="disc" id="disc"><span></span></div>
+    <div class="player-meta">
+      <b id="track-name">Our Song</b>
+      <small id="track-artist">now playing for you</small>
+      <div class="bar"><i id="track-progress"></i></div>
+    </div>
+    <button class="player-btn" id="play-btn" aria-label="Play or pause the song">▶</button>
+    <input class="volume" id="volume" type="range" min="0" max="1" step="0.01" value="0.7" aria-label="Volume" />
+  </div>
+
+  <audio id="audio" loop preload="metadata"></audio>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
